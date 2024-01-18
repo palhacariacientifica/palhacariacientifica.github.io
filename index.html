@@ -1,1 +1,127 @@
-Coming soon...
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Palhaçaria Científica</title>
+
+  <link rel="shortcut icon" href="images/favicon.png"/>
+
+  <!-- Atkinson Hyperlegible font -->
+  <link rel="stylesheet" href="fonts/atkinson-hyperlegible/fonts.css" />
+
+  <!-- FontAwsome icons -->
+  <link rel="stylesheet" href="fonts/fontawesome/css/all.css">
+
+  <!-- Andy Bell's CSS reset -->
+  <link rel="stylesheet" href="css/reset.css" />
+
+  <!-- Main CSS stylesheet -->
+  <link rel="stylesheet" href="css/style.css">
+
+  <!-- Plausible analytics for anonymous usage statistics -->
+  <script defer data-domain="palhacariacientifica.org" src="https://plausible.io/js/plausible.js"></script>
+
+</head>
+
+<body>
+  <header>
+    <div class="spread content-wide">
+      <span>Palhaçaria Científica</span>
+      <nav aria-label="Main">
+        <ul class="list-inline" role="list">
+            <li>
+              <a href="#sobre">Sobre</a>
+            </li>
+            <li>
+              <a href="#workshop">Workshop</a>
+            </li>
+            <li>
+              <a href="#contato">Contato</a>
+            </li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main class="flow">
+    <div class="banner" style="background-image: url(images/banner.jpg)" >
+      <div class="flow content">
+        <h1>Palhaçaria Científica</h1>
+        <p>Chamada do curso</p>
+        <ul class="list-inline" role="list">
+          <li>
+            <a href="{{ item.id }}" target="_blank">{{ item.name }}</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div class="content flow extra-space">
+
+      Corpo
+
+    </div>
+  </main>
+
+  <footer>
+    <div class="content-wide flow flow-large">
+      <nav aria-label="Main">
+        <ul class="list-inline" role="list">
+        {%- for item in config.navigation %}
+          <li>
+            {{ macros.nav_link(item, page, site) }}
+          </li>
+        {%- endfor %}
+        </ul>
+      </nav>
+      <ul class="list-inline" role="list">
+        <li>Follow the lab:</li>
+        <li>
+          <a href="https://github.com/{{ config.github }}" rel="me" target="_blank">
+            GitHub
+          </a>
+        </li>
+        <li>
+          <a href="{{ config.researchgate }}" rel="me" target="_blank">
+            ResearchGate
+          </a>
+        </li>
+        <li>
+          <a href="https://{{ config.mastodon_server }}/@{{ config.mastodon }}" rel="me" target="_blank">
+            Mastodon
+          </a>
+        </li>
+        <li>
+          <a href="https://www.linkedin.com/in/{{ config.linkedin }}" rel="me" target="_blank">
+            LinkedIn
+          </a>
+        </li>
+      </ul>
+      <div class="font-small">
+        <p>
+          {{ config.location.department }}
+          •
+          {{ config.location.school }}
+          •
+          {{ config.location.university }}
+          •
+          {{ config.location.country }}
+        </p>
+        <p>
+          Last updated {{ build.today.strftime('%Y/%m/%d') }} from source code
+          at
+          <i class="fab fa-github" aria-label="hidden"></i>
+          <a href="https://github.com/{{ config.repository }}/commit/{{ build.commit }}">
+            {{ config.repository }}@{{ build.commit }}
+          </a>
+        </p>
+        <p>
+          Copyright &copy; {{ build.today.year }} {{ config.author }}
+        </p>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>
