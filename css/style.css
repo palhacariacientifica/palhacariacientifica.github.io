@@ -5,7 +5,7 @@
   --color-dark: #372f2c;
   --color-medium: #dcceb4;
   --color-light: #fff7f7;
-  --color-primary: #990002;
+  --color-primary: #891717;
   --color-muted: #6b6565;
 
   /* Type scale calculated using https://utopia.fyi/type/calculator */
@@ -36,20 +36,20 @@
 }
 
 body {
-  background: var(--color-medium);
-  color: var(--color-dark);
+  background: var(--color-primary);
+  color: var(--color-light);
   font-family: "Atkinson Hyperlegible", sans-serif;
   font-size: var(--size-1);
   line-height: 1.6;
 }
 
 a {
-  color: var(--color-dark);
-  text-decoration: underline var(--color-primary) 2px;
+  color: var(--color-light);
+  text-decoration: underline var(--color-medium) 2px;
 }
 
 a:hover {
-  color: var(--color-primary);
+  color: var(--color-medium);
 }
 
 h1,
@@ -65,11 +65,10 @@ h1 {
 
 h2 {
   font-size: var(--size-4);
-  border-bottom: 2px solid var(--color-secondary);
 }
 
 h3 {
-  font-size: var(--size-3);
+  font-size: var(--size-2);
 }
 
 header, footer {
@@ -180,14 +179,36 @@ blockquote > * + *, figure > * + *, .callout > * + * {
   --flow-space: 2em;
 }
 
-.background-dark {
-  background-color: var(--color-medium);
-}
-
 .callout {
   background-color: var(--color-lightish);
   border-left: var(--block-border) solid var(--color-primary);
   padding: var(--gutter);
+}
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: flex-start;
+  gap: var(--gutter) var(--space-m);
+  --flow-space: 2em;
+}
+
+.col {
+  flex: 1;
+  min-width: 300px;
+}
+
+.negative-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, clamp(5rem, 50%, 15rem));
+  transform: scale(83.33%);
+  transform-origin: center;
+}
+
+.negative-grid > * {
+  transform: scale(120%);
+  transform-origin: center;
 }
 
 /* Utilities */
@@ -202,6 +223,10 @@ blockquote > * + *, figure > * + *, .callout > * + * {
   padding-left: 0;
 }
 
+.list-center {
+  justify-content: center;
+}
+
 .spread {
   display: flex;
   flex-wrap: wrap;
@@ -211,18 +236,31 @@ blockquote > * + *, figure > * + *, .callout > * + * {
 }
 
 .button {
-  background-color: var(--color-primary);
+  background-color: var(--color-light);
   border-radius: 0.2em;
-  color: var(--color-light);
+  color: var(--color-primary);
   padding: var(--space-xs);
+  text-decoration: none;
 }
 
 .button:hover {
-  background-color: var(--color-light);
+  background-color: var(--color-medium);
+  color: var(--color-dark);
+}
+
+.avatar {
+  border-radius: 100%;
+  border: 0.25em solid var(--color-light);
+  aspect-ratio: 1/1;
+  object-fit: cover;
 }
 
 /* Single-style utilities */
 /*****************************************************************************/
+.flow-small {
+  --flow-space: 0.5em;
+}
+
 .flow-large {
   --flow-space: 2.5em;
 }
@@ -232,7 +270,7 @@ blockquote > * + *, figure > * + *, .callout > * + * {
 }
 
 .font-small {
-  font-size: var(--size--1);
+  font-size: var(--size-0);
 }
 
 .font-normal {
@@ -276,5 +314,10 @@ blockquote > * + *, figure > * + *, .callout > * + * {
 }
 
 .background-light {
-  background-color: var(--color-light);
+  background-color: var(--color-medium);
+  color: var(--color-dark);
+}
+
+.background-light a {
+  color: var(--color-dark);
 }
