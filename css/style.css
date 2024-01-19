@@ -2,14 +2,11 @@
 /*****************************************************************************/
 :root {
   /* Colors */
-  --color-dark: #15204a;
-  --color-medium: #b7bcc3;
-  --color-lightish: #edf4ff;
+  --color-dark: #372f2c;
+  --color-medium: #dcceb4;
   --color-light: #fff7f7;
-  --color-primary: #236ad5;
-  --color-secondary: #ffaaaa;
-  --color-muted: #4b6b9b;
-  --color-extramuted: #4b6b9b55;
+  --color-primary: #990002;
+  --color-muted: #6b6565;
 
   /* Type scale calculated using https://utopia.fyi/type/calculator */
   --size--1: clamp(0.94rem, calc(0.90rem + 0.18vw), 1.04rem);
@@ -76,7 +73,7 @@ h3 {
 }
 
 header, footer {
-  background: var(--color-dark);
+  background: var(--color-primary);
   color: var(--color-light);
 }
 
@@ -192,8 +189,9 @@ blockquote > * + *, figure > * + *, .callout > * + * {
 
 .banner {
   width: 100%;
+  background-image: url(../images/banner.jpg);
   background-size: cover;
-  background-position: center right;
+  background-position: top left;
   box-shadow:
     inset 0px 30px 15px -15px rgba(0, 0, 0, 0.30),
     inset 0px -30px 15px -15px rgba(0, 0, 0, 0.30);
@@ -204,14 +202,31 @@ blockquote > * + *, figure > * + *, .callout > * + * {
 }
 
 .banner a {
+  background-color: var(--color-primary);
   color: var(--color-light);
   text-decoration: none;
-  border-bottom: 2px solid var(--color-light);
+  padding: var(--gutter);
 }
 
 .banner a:hover {
-  color: var(--color-medium);
-  border-bottom: 2px solid var(--color-medium);
+  color: var(--color-dark);
+  background-color: var(--color-medium);
+}
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  /*align-items: start;*/
+  justify-content: flex-start;
+  gap: var(--space-l) var(--space-m);
+}
+
+.col-1 {
+  flex: 1;
+}
+
+.col-2 {
+  flex: 2;
 }
 
 .callout {
@@ -326,6 +341,12 @@ blockquote > * + *, figure > * + *, .callout > * + * {
   align-items: center;
   justify-content: space-between;
   gap: var(--gutter);
+}
+
+.display-font {
+  font-family: "Amatic SC", sans-serif;
+  font-weight: bold;
+  font-size: var(--size-2);
 }
 
 

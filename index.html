@@ -11,6 +11,9 @@
   <!-- Atkinson Hyperlegible font -->
   <link rel="stylesheet" href="fonts/atkinson-hyperlegible/fonts.css" />
 
+  <!-- Atkinson Hyperlegible font -->
+  <link rel="stylesheet" href="fonts/amatic-sc/fonts.css" />
+
   <!-- FontAwsome icons -->
   <link rel="stylesheet" href="fonts/fontawesome/css/all.css">
 
@@ -28,7 +31,7 @@
 <body>
   <header>
     <div class="spread content-wide">
-      <span>Palhaçaria Científica</span>
+      <span class="display-font">Palhaçaria Científica</span>
       <nav aria-label="Main">
         <ul class="list-inline" role="list">
             <li>
@@ -46,15 +49,22 @@
   </header>
 
   <main class="flow">
-    <div class="banner" style="background-image: url(images/banner.jpg)" >
-      <div class="flow content">
-        <h1>Palhaçaria Científica</h1>
-        <p>Chamada do curso</p>
+    <div class="banner">
+      <div class="flow content-wide row">
+        <div class="col-1">
+        </div>
+        <div class="col-1">
+        <h1>Slogan do projeto</h1>
+        <p>Frase sobre o projeto de palhaçaria em um pouco mais de detalhes</p>
         <ul class="list-inline" role="list">
           <li>
-            <a href="{{ item.id }}" target="_blank">{{ item.name }}</a>
+            <a href="#workshop">Sobre o workshop</a>
+          </li>
+          <li>
+            <a href="#sobre">Quem somos</a>
           </li>
         </ul>
+        </div>
       </div>
     </div>
     <div class="content flow extra-space">
